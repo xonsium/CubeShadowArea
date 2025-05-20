@@ -99,7 +99,7 @@ while True:
         a = projected2d[0, 0]
         b = projected2d[1, 0]
         projected2d_points[i] = [a, b]
-        
+
 
         x = int(projected2d[0, 0] * scale) + circle_pos[0]
         y = int(projected2d[1, 0] * scale) + circle_pos[1]
@@ -121,12 +121,12 @@ while True:
 
         area_text = font.render(f'Curr Area: {round(shadow_area, 4)}', True, Color.WHITE)
         area_rect = area_text.get_rect()
-        area_rect.center = (3*WIDTH/4, 3*HEIGHT/4+50)
+        area_rect.center = (int(3*WIDTH/4), int(3*HEIGHT/4+50))
         screen.blit(area_text, area_rect)
 
         avg_area_text = font.render(f'Avg Area: {round(avg_area, 4)}', True, Color.WHITE)
         avg_area_rect = avg_area_text.get_rect()
-        avg_area_rect.center = (3*WIDTH/4, 3*HEIGHT/4+70)
+        avg_area_rect.center = (int(3*WIDTH/4), int(3*HEIGHT/4+70))
         screen.blit(avg_area_text, avg_area_rect)
 
     except QhullError:
@@ -140,12 +140,12 @@ while True:
 
     cube_title = font.render(f'Top View of Cube', True, Color.WHITE)
     area_rect = cube_title.get_rect()
-    area_rect.center = (WIDTH/4, HEIGHT/8)
+    area_rect.center = (int(WIDTH/4), int(HEIGHT/8))
     screen.blit(cube_title, area_rect)
 
     cube_title = font.render(f'Shape of Shadow', True, Color.WHITE)
     area_rect = cube_title.get_rect()
-    area_rect.center = (3*WIDTH/4, HEIGHT/8)
+    area_rect.center = (int(3*WIDTH/4), int(HEIGHT/8))
     screen.blit(cube_title, area_rect)
 
     pygame.display.update()
